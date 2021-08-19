@@ -1,4 +1,5 @@
-#BEST
+# BEST
+```
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         
@@ -16,8 +17,10 @@ public class Solution {
         return indices;
     }
 }
+```
 
-BETTER
+# BETTER
+```
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         
@@ -39,5 +42,6 @@ public class Solution {
        
 }
 }
+```
 
 CORRECT
