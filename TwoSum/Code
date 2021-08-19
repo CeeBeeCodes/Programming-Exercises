@@ -1,0 +1,43 @@
+BEST
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+        
+        int[] indices = new int[2];
+       Dictionary<int, int> nums2List = new Dictionary<int, int>(); // nums2, index
+        for (int i = 0; i < nums.Length; i++) {
+            int nums2 = target - nums[i];
+            if (!nums2List.ContainsKey(nums[i])) nums2List.Add(nums2, i);
+            else {
+                indices[0] = i;
+                indices[1] = nums2List[nums[i]];
+                return indices;
+            }
+        }
+        return indices;
+    }
+}
+
+BETTER
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+        
+        int[] indices = new int[2];
+        Dictionary<int, int> difference = new Dictionary<int, int>();
+        for (int i = 0; i < nums.Length; i++) {
+            int diff = target - nums[i];
+            if (!difference.ContainsKey(diff)) difference.Add(diff, i);            
+        }
+        
+        for (int i = 0; i < nums.Length; i++) {
+            if (difference.ContainsKey(nums[i])) {
+            indices[0] = i;
+            indices[1] = difference[nums[i]];                    
+            }
+        }
+        
+        return indices;
+       
+}
+}
+
+CORRECT
